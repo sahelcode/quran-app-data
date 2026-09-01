@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "different": [
     {
       "id": "d001",
@@ -288,7 +288,25 @@
         "pageInJuz": 5,
         "absolutePage": 566
       }
-    }
+    },
+    {
+      "id": "d018",
+      "ayah1": "إِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
+      "ayah2": "فَإِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
+      "diffWord": "إِنَّكَ / فَإِنَّكَ",
+      "ref1": {
+        "surah": "النمل",
+        "juz": 20,
+        "pageInJuz": 3,
+        "absolutePage": 384
+      },
+      "ref2": {
+        "surah": "الروم",
+        "juz": 21,
+        "pageInJuz": 9,
+        "absolutePage": 410
+      }
+    },
   ],
   "same": [
     {
