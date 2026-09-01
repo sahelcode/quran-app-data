@@ -1,441 +1,756 @@
-{
-  "version": 3,
-  "different": [
-    {
-      "id": "d001",
-      "ayah1": "إِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
-      "ayah2": "فَإِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
-      "diffWord": "إِنَّكَ / فَإِنَّكَ",
-      "ref1": {
-        "surah": "النمل",
-        "juz": 20,
-        "pageInJuz": 3,
-        "absolutePage": 384
-      },
-      "ref2": {
-        "surah": "الروم",
-        "juz": 21,
-        "pageInJuz": 9,
-        "absolutePage": 410
+import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
+
+import 'quiz_page.dart';
+import 'mutashabihat_data.dart';
+import 'mutashabihat_repository.dart';
+import 'mutashabihat_bookmarks.dart';
+import 'app_state.dart';
+import 'app_colors.dart';
+import 'quran_reader_page.dart';
+
+class AyateMusbaPage extends StatefulWidget {
+  const AyateMusbaPage({super.key});
+
+  @override
+  State<AyateMusbaPage> createState() => _AyateMusbaPageState();
+}
+
+class _AyateMusbaPageState extends State<AyateMusbaPage>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabController;
+
+  /// কোন পারা দেখানো হবে — null মানে সব
+  int? _juzFilter;
+
+  /// শুধু বুকমার্ক করা জোড়া দেখানো হবে কি না
+  bool _onlySaved = false;
+
+  String tr(String bn, String en) => appLang == 'bn' ? bn : en;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  // ── বাংলা সংখ্যা ──────────────────────────────────────────
+  String _num(int n) {
+    if (appLang != 'bn') return n.toString();
+    const bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+    return n.toString().split('').map((c) {
+      final d = int.tryParse(c);
+      return d == null ? c : bn[d];
+    }).join();
+  }
+
+  String _metaText(AyahRef ref) {
+    final juz = _num(ref.juz);
+    final page = _num(ref.pageInJuz);
+    return appLang == 'bn'
+        ? '$juz পারা • $page পৃষ্ঠা • ${ref.surah}'
+        : 'Juz $juz • Page $page • ${ref.surah}';
+  }
+
+  Future<void> _openRef(AyahRef ref) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => QuranReaderPage(initialPage: ref.absolutePage),
+      ),
+    );
+  }
+
+  // ── ফিল্টার প্রয়োগ ────────────────────────────────────────
+  List<DifferentAyah> get _filteredDifferent {
+    return MutashabihatRepo.different.where((e) {
+      if (_onlySaved && !MutashabihatBookmarks.isSaved(e.id)) return false;
+      if (_juzFilter != null &&
+          !e.variants.any((v) => v.ref.juz == _juzFilter)) {
+        return false;
       }
-    },
-    {
-      "id": "d002",
-      "ayah1": "إِنَّ هَذَا لَهُوَ الْفَصْلُ الْمُبِينُ",
-      "ayah2": "إِنَّ هَذَا لَهُوَ الْبَلَاءُ الْمُبِينُ",
-      "diffWord": "الْفَصْلُ / الْبَلَاءُ",
-      "ref1": {
-        "surah": "النمل",
-        "juz": 19,
-        "pageInJuz": 16,
-        "absolutePage": 377
-      },
-      "ref2": {
-        "surah": "الصافات",
-        "juz": 23,
-        "pageInJuz": 8,
-        "absolutePage": 449
+      return true;
+    }).toList();
+  }
+
+  List<SameAyah> get _filteredSame {
+    return MutashabihatRepo.same.where((e) {
+      if (_onlySaved && !MutashabihatBookmarks.isSaved(e.id)) return false;
+      if (_juzFilter != null &&
+          !e.refs.any((r) => r.juz == _juzFilter)) {
+        return false;
       }
-    },
-    {
-      "id": "d003",
-      "ayah1": "وَأَنَا رَبُّكُمْ فَاعْبُدُونِ",
-      "ayah2": "وَأَنَا رَبُّكُمْ فَاتَّقُونِ",
-      "diffWord": "فَاعْبُدُونِ / فَاتَّقُونِ",
-      "ref1": {
-        "surah": "الأنبياء",
-        "juz": 17,
-        "pageInJuz": 9,
-        "absolutePage": 330
-      },
-      "ref2": {
-        "surah": "المؤمنون",
-        "juz": 18,
-        "pageInJuz": 4,
-        "absolutePage": 345
+      return true;
+    }).toList();
+  }
+
+  /// ডেটায় যেসব পারা আছে শুধু সেগুলোই ফিল্টারে দেখানো হয়
+  List<int> get _availableJuz {
+    final set = <int>{};
+    for (final e in MutashabihatRepo.different) {
+      for (final v in e.variants) {
+        set.add(v.ref.juz);
       }
-    },
-    {
-      "id": "d004",
-      "ayah1": "إِنَّ يَوْمَ الْفَصْلِ مِيقَاتُهُمْ أَجْمَعِينَ",
-      "ayah2": "إِنَّ يَوْمَ الْفَصْلِ كَانَ مِيقَاتًا",
-      "diffWord": "مِيقَاتُهُمْ أَجْمَعِينَ / كَانَ مِيقَاتًا",
-      "ref1": {
-        "surah": "الدخان",
-        "juz": 25,
-        "pageInJuz": 16,
-        "absolutePage": 497
-      },
-      "ref2": {
-        "surah": "النبأ",
-        "juz": 30,
-        "pageInJuz": 1,
-        "absolutePage": 586
-      }
-    },
-    {
-      "id": "d005",
-      "ayah1": "وَإِلَيْنَا تُرْجَعُونَ",
-      "ayah2": "ثُمَّ إِلَيْنَا تُرْجَعُونَ",
-      "diffWord": "وَإِلَيْنَا / ثُمَّ إِلَيْنَا",
-      "ref1": {
-        "surah": "الأنبياء",
-        "juz": 17,
-        "pageInJuz": 3,
-        "absolutePage": 324
-      },
-      "ref2": {
-        "surah": "العنكبوت",
-        "juz": 21,
-        "pageInJuz": 2,
-        "absolutePage": 403
-      }
-    },
-    {
-      "id": "d006",
-      "ayah1": "ثُمَّ لَا يَمُوتُ فِيهَا وَلَا يَحْيَى",
-      "ayah2": "لَا يَمُوتُ فِيهَا وَلَا يَحْيَى",
-      "diffWord": "ثُمَّ / —",
-      "ref1": {
-        "surah": "الأعلى",
-        "juz": 30,
-        "pageInJuz": 12,
-        "absolutePage": 597
-      },
-      "ref2": {
-        "surah": "طه",
-        "juz": 16,
-        "pageInJuz": 15,
-        "absolutePage": 316
-      }
-    },
-    {
-      "id": "d007",
-      "ayah1": "مِنْ دُونِهِ هُوَ الْبَاطِلُ",
-      "ayah2": "مِنْ دُونِهِ الْبَاطِلُ",
-      "diffWord": "هُوَ / —",
-      "ref1": {
-        "surah": "الحج",
-        "juz": 17,
-        "pageInJuz": 18,
-        "absolutePage": 339
-      },
-      "ref2": {
-        "surah": "لقمان",
-        "juz": 21,
-        "pageInJuz": 13,
-        "absolutePage": 414
-      }
-    },
-    {
-      "id": "d008",
-      "ayah1": "قَالَتْ رَبِّ إِنِّي ظَلَمْتُ نَفْسِي",
-      "ayah2": "قَالَ رَبِّ إِنِّي ظَلَمْتُ نَفْسِي",
-      "diffWord": "قَالَتْ / قَالَ",
-      "ref1": {
-        "surah": "النمل",
-        "juz": 19,
-        "pageInJuz": 19,
-        "absolutePage": 380
-      },
-      "ref2": {
-        "surah": "القصص",
-        "juz": 20,
-        "pageInJuz": 6,
-        "absolutePage": 387
-      }
-    },
-    {
-      "id": "d009",
-      "ayah1": "إِنَّ ذَلِكَ لَمِنْ عَزْمِ الْأُمُورِ",
-      "ayah2": "إِنَّ ذَلِكَ مِنْ عَزْمِ الْأُمُورِ",
-      "diffWord": "لَمِنْ / مِنْ",
-      "ref1": {
-        "surah": "الشورى",
-        "juz": 25,
-        "pageInJuz": 6,
-        "absolutePage": 487
-      },
-      "ref2": {
-        "surah": "لقمان",
-        "juz": 21,
-        "pageInJuz": 11,
-        "absolutePage": 412
-      }
-    },
-    {
-      "id": "d010",
-      "ayah1": "إِنَّ هَذِهِ أُمَّتُكُمْ أُمَّةً وَاحِدَةً",
-      "ayah2": "وَإِنَّ هَذِهِ أُمَّتُكُمْ أُمَّةً وَاحِدَةً",
-      "diffWord": "إِنَّ / وَإِنَّ",
-      "ref1": {
-        "surah": "الأنبياء",
-        "juz": 17,
-        "pageInJuz": 9,
-        "absolutePage": 330
-      },
-      "ref2": {
-        "surah": "المؤمنون",
-        "juz": 18,
-        "pageInJuz": 4,
-        "absolutePage": 345
-      }
-    },
-    {
-      "id": "d011",
-      "ayah1": "ثُمَّ يَجْعَلُهُ حُطَامًا",
-      "ayah2": "يَكُونُ حُطَامًا",
-      "diffWord": "ثُمَّ يَجْعَلُهُ / يَكُونُ",
-      "ref1": {
-        "surah": "الزمر",
-        "juz": 23,
-        "pageInJuz": 19,
-        "absolutePage": 460
-      },
-      "ref2": {
-        "surah": "الحديد",
-        "juz": 27,
-        "pageInJuz": 19,
-        "absolutePage": 540
-      }
-    },
-    {
-      "id": "d013",
-      "ayah1": "لَكُمْ فِيهَا فَوَاكِهُ كَثِيرَةٌ",
-      "ayah2": "لَكُمْ فِيهَا فَاكِهَةٌ كَثِيرَةٌ",
-      "diffWord": "فَوَاكِهُ / فَاكِهَةٌ",
-      "ref1": {
-        "surah": "المؤمنون",
-        "juz": 18,
-        "pageInJuz": 2,
-        "absolutePage": 343
-      },
-      "ref2": {
-        "surah": "الزخرف",
-        "juz": 25,
-        "pageInJuz": 13,
-        "absolutePage": 494
-      }
-    },
-    {
-      "id": "d014",
-      "ayah1": "مَا أَنْتَ إِلَّا بَشَرٌ مِثْلُنَا",
-      "ayah2": "وَمَا أَنْتَ إِلَّا بَشَرٌ مِثْلُنَا",
-      "diffWord": "مَا / وَمَا",
-      "ref1": {
-        "surah": "الشعراء",
-        "juz": 19,
-        "pageInJuz": 12,
-        "absolutePage": 373
-      },
-      "ref2": {
-        "surah": "الشعراء",
-        "juz": 19,
-        "pageInJuz": 13,
-        "absolutePage": 374
-      }
-    },
-    {
-      "id": "d015",
-      "ayah1": "قَالُوا يَا وَيْلَنَا إِنَّا كُنَّا ظَالِمِينَ",
-      "ayah2": "قَالُوا يَا وَيْلَنَا إِنَّا كُنَّا طَاغِينَ",
-      "diffWord": "ظَالِمِينَ / طَاغِينَ",
-      "ref1": {
-        "surah": "الأنبياء",
-        "juz": 17,
-        "pageInJuz": 2,
-        "absolutePage": 323
-      },
-      "ref2": {
-        "surah": "القلم",
-        "juz": 29,
-        "pageInJuz": 4,
-        "absolutePage": 565
-      }
-    },
-    {
-      "id": "d016",
-      "ayah1": "أَمْ تَسْأَلُهُمْ خَرْجًا",
-      "ayah2": "أَمْ تَسْأَلُهُمْ أَجْرًا",
-      "diffWord": "خَرْجًا / أَجْرًا",
-      "ref1": {
-        "surah": "المؤمنون",
-        "juz": 18,
-        "pageInJuz": 5,
-        "absolutePage": 346
-      },
-      "ref2": {
-        "surah": "الطور",
-        "juz": 27,
-        "pageInJuz": 4,
-        "absolutePage": 525
-      }
-    },
-    {
-      "id": "d017",
-      "ayah1": "أَمْ تَسْأَلُهُمْ خَرْجًا",
-      "ayah2": "أَمْ تَسْأَلُهُمْ أَجْرًا",
-      "diffWord": "خَرْجًا / أَجْرًا",
-      "ref1": {
-        "surah": "المؤمنون",
-        "juz": 18,
-        "pageInJuz": 5,
-        "absolutePage": 346
-      },
-      "ref2": {
-        "surah": "القلم",
-        "juz": 29,
-        "pageInJuz": 5,
-        "absolutePage": 566
-      }
-    },
-    {
-      "id": "d018",
-      "ayah1": "إِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
-      "ayah2": "فَإِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
-      "diffWord": "إِنَّكَ / فَإِنَّكَ",
-      "ref1": {
-        "surah": "النمل",
-        "juz": 20,
-        "pageInJuz": 3,
-        "absolutePage": 384
-      },
-      "ref2": {
-        "surah": "الروم",
-        "juz": 21,
-        "pageInJuz": 9,
-        "absolutePage": 410
-      }
-    },
-    {
-      "id": "d019",
-      "ayah1": "إِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
-      "ayah2": "فَإِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
-      "diffWord": "إِنَّكَ / فَإِنَّكَ",
-      "ref1": {
-        "surah": "النمل",
-        "juz": 20,
-        "pageInJuz": 3,
-        "absolutePage": 384
-      },
-      "ref2": {
-        "surah": "الروم",
-        "juz": 21,
-        "pageInJuz": 9,
-        "absolutePage": 410
-      }
-    },
-    {
-      "id": "d020",
-      "ayah1": "إِنَّكَ لَاتُسْمِعُ الْمَوْتَى",
-      "ayah2": "فَإِنَّكَ لَا تُسْمعُ الْمَوْتَى",
-      "diffWord": "إِنَّكَ / فَإِنَّكَ",
-      "ref1": {
-        "surah": "النمل",
-        "juz": 20,
-        "pageInJuz": 3,
-        "absolutePage": 384
-      },
-      "ref2": {
-        "surah": "الروم",
-        "juz": 21,
-        "pageInJuz": 9,
-        "absolutePage": 410
-      }
-    },
-  ],
-  "same": [
-    {
-      "id": "s001",
-      "ayah": "أَمْ تَسْأَلُهُمْ أَجْرًا",
-      "refs": [
-        {
-          "surah": "المؤمنون",
-          "juz": 27,
-          "pageInJuz": 4,
-          "absolutePage": 525
-        },
-        {
-          "surah": "القلم",
-          "juz": 29,
-          "pageInJuz": 5,
-          "absolutePage": 566
-        }
-      ]
-    },
-    {
-      "id": "s002",
-      "ayah": "إِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
-      "refs": [
-        {
-          "surah": "النمل",
-          "juz": 20,
-          "pageInJuz": 3,
-          "absolutePage": 384
-        }
-      ]
-    },
-    {
-      "id": "s003",
-      "ayah": "لَكُمْ فِيهَا فَوَاكِهُ كَثِيرَةٌ",
-      "refs": [
-        {
-          "surah": "المؤمنون",
-          "juz": 18,
-          "pageInJuz": 2,
-          "absolutePage": 343
-        }
-      ]
-    },
-    {
-      "id": "s004",
-      "ayah": "قَالُوا يَا وَيْلَنَا إِنَّا كُنَّا ظَالِمِينَ",
-      "refs": [
-        {
-          "surah": "الأنبياء",
-          "juz": 17,
-          "pageInJuz": 2,
-          "absolutePage": 323
-        }
-      ]
-    },
-    {
-      "id": "s005",
-      "ayah": "مَا أَنْتَ إِلَّا بَشَرٌ مِثْلُنَا",
-      "refs": [
-        {
-          "surah": "الشعراء",
-          "juz": 19,
-          "pageInJuz": 12,
-          "absolutePage": 373
-        }
-      ],
-      "completionText": "مَا أَنْتَ إِلَّا ...... مِثْلُنَا",
-      "missingWord": "بَشَرٌ",
-      "completionWrongOptions": [
-        "شَدِيدَ",
-        "كُلَّ",
-        "عَظِيمَ"
-      ]
-    },
-    {
-      "id": "s006",
-      "ayah": "وَإِنَّ هَذِهِ أُمَّتُكُمْ أُمَّةً وَاحِدَةً",
-      "refs": [
-        {
-          "surah": "المؤمنون",
-          "juz": 18,
-          "pageInJuz": 4,
-          "absolutePage": 345
-        }
-      ],
-      "completionText": "وَإِنَّ هَذِهِ أُمَّتُكُمْ ... وَاحِدَةً",
-      "missingWord": "أُمَّةً",
-      "completionWrongOptions": [
-        "مَّةً",
-        "لَهُ",
-        "فِي"
-      ]
     }
-  ]
+    for (final e in MutashabihatRepo.same) {
+      for (final r in e.refs) {
+        set.add(r.juz);
+      }
+    }
+    final list = set.where((j) => j >= 1 && j <= 30).toList()..sort();
+    return list;
+  }
+
+  // ── শেয়ার ─────────────────────────────────────────────────
+  void _shareDifferent(DifferentAyah item) {
+    final buffer = StringBuffer();
+    for (final v in item.variants) {
+      buffer
+        ..writeln(v.ayah)
+        ..writeln(_metaText(v.ref))
+        ..writeln();
+    }
+    buffer
+      ..writeln(appLang == 'bn'
+          ? 'পার্থক্য: ${item.diffWord}'
+          : 'Difference: ${item.diffWord}')
+      ..writeln()
+      ..writeln(tr('হিফজ কুরআন অ্যাপ থেকে', 'From Hifz Quran app'));
+    Share.share(buffer.toString());
+  }
+
+  void _shareSame(SameAyah item) {
+    final buffer = StringBuffer()..writeln(item.ayah)..writeln();
+    for (final r in item.refs) {
+      buffer.writeln(_metaText(r));
+    }
+    buffer
+      ..writeln()
+      ..writeln(tr('হিফজ কুরআন অ্যাপ থেকে', 'From Hifz Quran app'));
+    Share.share(buffer.toString());
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // ইনলাইন হাইলাইট — পার্থক্যের শব্দ আয়াতের ভেতরেই রঙিন
+  //
+  // এটাই এই স্ক্রিনের মূল বৈশিষ্ট্য। পার্থক্যটা নিচে আলাদা লাইনে
+  // না লিখে আয়াতের ভেতরেই দেখানো হয়, কারণ হাফেজের চোখ আয়াত
+  // পড়ার সময়ই পার্থক্যটা ধরতে চায়।
+  //
+  // শব্দ খুঁজে না পেলে (ডেটায় হরকতের গরমিল থাকলে) পুরো আয়াত
+  // সাধারণভাবে দেখায় — কিছু ভাঙে না।
+  // ─────────────────────────────────────────────────────────
+  Widget _ayahWithHighlight({
+    required String ayah,
+    required String diffPart,
+    required Color textColor,
+    required Color hlText,
+    double fontSize = 18.5,
+  }) {
+    final base = TextStyle(fontSize: fontSize, color: textColor, height: 1.75);
+
+    if (diffPart.isEmpty || !ayah.contains(diffPart)) {
+      return Text(ayah,
+          textAlign: TextAlign.right,
+          textDirection: TextDirection.rtl,
+          style: base);
+    }
+
+    final index = ayah.indexOf(diffPart);
+    final before = ayah.substring(0, index);
+    final after = ayah.substring(index + diffPart.length);
+
+    return RichText(
+      textAlign: TextAlign.right,
+      textDirection: TextDirection.rtl,
+      text: TextSpan(
+        style: base,
+        children: [
+          if (before.isNotEmpty) TextSpan(text: before),
+          TextSpan(
+            text: diffPart,
+            // শুধু রঙ ও একটু ভারী ওজন — বাক্স বা আন্ডারলাইন নেই।
+            // আরবি হরকতের নিচে আন্ডারলাইন গেলে লেখা ঘিঞ্জি দেখায়,
+            // আর রঙই পার্থক্য বোঝাতে যথেষ্ট।
+            style: TextStyle(
+              color: hlText,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          if (after.isNotEmpty) TextSpan(text: after),
+        ],
+      ),
+    );
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // DIFFERENT AYAH কার্ড
+  // ─────────────────────────────────────────────────────────
+  Widget _buildDifferentCard(DifferentAyah item, int position) {
+    final colors = context.appColors;
+    final saved = MutashabihatBookmarks.isSaved(item.id);
+    final hook = appLang == 'bn' ? item.hookBn : item.hookEn;
+
+    // হাইলাইটের রঙ — লাইটে গাঢ় সোনালি-বাদামি, ডার্কে উষ্ণ সোনালি
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final hlText =
+        isDark ? const Color(0xFFF0B860) : const Color(0xFF9A6407);
+
+    return Container(
+      margin: const EdgeInsets.fromLTRB(14, 0, 14, 8), //sizeedit কার্ডের মাঝের ফাঁক
+      padding: const EdgeInsets.fromLTRB(13, 8, 13, 10), //sizeedit কার্ডের ভেতরের ফাঁক
+      decoration: BoxDecoration(
+        color: colors.cardBg,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: colors.divider),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // ── উপরের সারি: ক্রমিক + কতটি জায়গা + বুকমার্ক + শেয়ার ──
+          Row(
+            children: [
+              // ক্রমিক নম্বর — গোল ব্যাজে
+              Container(
+                width: 24, //sizeedit ক্রমিক ব্যাজের সাইজ
+                height: 24, //sizeedit ক্রমিক ব্যাজের সাইজ
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: colors.actionButtonBg,
+                  shape: BoxShape.circle,
+                ),
+                child: Text(
+                  _num(position),
+                  style: TextStyle(
+                      fontSize: 11.5,
+                      fontWeight: FontWeight.w600,
+                      color: colors.actionButtonText),
+                ),
+              ),
+              // দুইয়ের বেশি জায়গা হলে সেটা আলাদা করে জানানো হয়
+              if (item.variants.length > 2) ...[
+                const SizedBox(width: 6),
+                Text(
+                  appLang == 'bn'
+                      ? '${_num(item.variants.length)} জায়গায়'
+                      : '${_num(item.variants.length)} places',
+                  style:
+                      TextStyle(fontSize: 11, color: colors.textSecondary),
+                ),
+              ],
+              const Spacer(),
+              InkWell(
+                borderRadius: BorderRadius.circular(20),
+                onTap: () async {
+                  final nowSaved =
+                      await MutashabihatBookmarks.toggle(item.id);
+                  if (!mounted) return;
+                  setState(() {});
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    duration: const Duration(milliseconds: 1200),
+                    content: Text(nowSaved
+                        ? tr('কঠিন জোড়ায় যোগ হয়েছে', 'Added to your list')
+                        : tr('তালিকা থেকে সরানো হয়েছে', 'Removed')),
+                  ));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Icon(
+                    saved ? Icons.bookmark : Icons.bookmark_border,
+                    size: 20,
+                    color: saved ? colors.primary : colors.textSecondary,
+                  ),
+                ),
+              ),
+              InkWell(
+                borderRadius: BorderRadius.circular(20),
+                onTap: () => _shareDifferent(item),
+                child: Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Icon(Icons.share_outlined,
+                      size: 18, color: colors.textSecondary),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6), //sizeedit হেডার ↔ প্রথম আয়াত
+
+          // ── যতগুলো আয়াত আছে সবগুলো ─────────────────────────
+          for (int i = 0; i < item.variants.length; i++) ...[
+            if (i > 0)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 7), //sizeedit আয়াতের মাঝের ফাঁক
+                child: Divider(height: 1, color: colors.divider),
+              ),
+            InkWell(
+              borderRadius: BorderRadius.circular(8),
+              onTap: () => _openRef(item.variants[i].ref),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  _ayahWithHighlight(
+                    ayah: item.variants[i].ayah,
+                    diffPart: item.variants[i].diffWord,
+                    textColor: colors.textPrimary,
+                    hlText: hlText,
+                  ),
+                  const SizedBox(height: 2), //sizeedit আয়াত ↔ রেফারেন্স
+                  Text(_metaText(item.variants[i].ref),
+                      style: TextStyle(
+                          fontSize: 11, color: colors.textSecondary)),
+                ],
+              ),
+            ),
+          ],
+
+          // ── মনে রাখার কৌশল — ডেটায় থাকলেই দেখাবে ───────────
+          if (hook != null && hook.isNotEmpty)
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.only(top: 8),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+              decoration: BoxDecoration(
+                color: colors.scaffoldBg,
+                borderRadius: BorderRadius.circular(9),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.lightbulb_outline,
+                      size: 14, color: colors.textSecondary),
+                  const SizedBox(width: 7),
+                  Expanded(
+                    child: Text(
+                      hook,
+                      style: TextStyle(
+                          fontSize: 12,
+                          color: colors.textSecondary,
+                          height: 1.45),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // SAME AYAH কার্ড
+  // ─────────────────────────────────────────────────────────
+  Widget _buildSameCard(SameAyah item) {
+    final colors = context.appColors;
+    final saved = MutashabihatBookmarks.isSaved(item.id);
+
+    return Container(
+      margin: const EdgeInsets.fromLTRB(14, 0, 14, 8), //sizeedit কার্ডের মাঝের ফাঁক
+      padding: const EdgeInsets.fromLTRB(13, 8, 13, 10), //sizeedit কার্ডের ভেতরের ফাঁক
+      decoration: BoxDecoration(
+        color: colors.cardBg,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: colors.divider),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                decoration: BoxDecoration(
+                  color: colors.actionButtonBg,
+                  borderRadius: BorderRadius.circular(999),
+                ),
+                child: Text(
+                  appLang == 'bn'
+                      ? '${_num(item.refs.length)} জায়গায়'
+                      : '${_num(item.refs.length)} places',
+                  style: TextStyle(
+                      fontSize: 11.5, color: colors.actionButtonText),
+                ),
+              ),
+              const Spacer(),
+              InkWell(
+                borderRadius: BorderRadius.circular(20),
+                onTap: () async {
+                  await MutashabihatBookmarks.toggle(item.id);
+                  if (!mounted) return;
+                  setState(() {});
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(6),
+                  child: Icon(
+                    saved ? Icons.bookmark : Icons.bookmark_border,
+                    size: 21,
+                    color: saved ? colors.primary : colors.textSecondary,
+                  ),
+                ),
+              ),
+              InkWell(
+                borderRadius: BorderRadius.circular(20),
+                onTap: () => _shareSame(item),
+                child: Padding(
+                  padding: const EdgeInsets.all(6),
+                  child: Icon(Icons.share_outlined,
+                      size: 19, color: colors.textSecondary),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6), //sizeedit হেডার ↔ আয়াত
+          Text(
+            item.ayah,
+            textAlign: TextAlign.right,
+            textDirection: TextDirection.rtl,
+            style: TextStyle(
+                fontSize: 18.5, color: colors.textPrimary, height: 1.75),
+          ),
+          const SizedBox(height: 6), //sizeedit আয়াত ↔ রেফারেন্স
+          ...item.refs.map(
+            (ref) => InkWell(
+              borderRadius: BorderRadius.circular(8),
+              onTap: () => _openRef(ref),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 3), //sizeedit রেফারেন্স সারির ফাঁক
+                child: Row(
+                  children: [
+                    Icon(Icons.menu_book_outlined,
+                        size: 14, color: colors.textSecondary),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(_metaText(ref),
+                          style: TextStyle(
+                              fontSize: 12.5, color: colors.textSecondary)),
+                    ),
+                    Icon(Icons.chevron_right,
+                        size: 17, color: colors.textSecondary),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // ফিল্টার বার — পারা বেছে নেওয়া + শুধু সেভ করা দেখা
+  // ─────────────────────────────────────────────────────────
+  Widget _buildFilterBar(int resultCount) {
+    final colors = context.appColors;
+    final juzList = _availableJuz;
+
+    Widget chip({
+      required String label,
+      required bool selected,
+      required VoidCallback onTap,
+      IconData? icon,
+    }) {
+      return Padding(
+        padding: const EdgeInsets.only(right: 8),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(999),
+          onTap: onTap,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 180),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 13, vertical: 7), //sizeedit চিপের ফাঁক
+            decoration: BoxDecoration(
+              color: selected ? colors.primary : colors.cardBg,
+              borderRadius: BorderRadius.circular(999),
+              border: Border.all(
+                  color: selected ? colors.primary : colors.divider),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (icon != null) ...[
+                  Icon(icon,
+                      size: 14,
+                      color: selected
+                          ? colors.onPrimary
+                          : colors.textSecondary),
+                  const SizedBox(width: 5),
+                ],
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight:
+                        selected ? FontWeight.w600 : FontWeight.w400,
+                    color:
+                        selected ? colors.onPrimary : colors.textSecondary,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 44, //sizeedit ফিল্টার বারের উচ্চতা
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.fromLTRB(14, 6, 8, 6),
+            children: [
+              chip(
+                label: tr('আমার কঠিন জোড়া', 'My list'),
+                selected: _onlySaved,
+                icon: Icons.bookmark_border,
+                onTap: () => setState(() => _onlySaved = !_onlySaved),
+              ),
+              chip(
+                label: tr('সব পারা', 'All juz'),
+                selected: _juzFilter == null,
+                onTap: () => setState(() => _juzFilter = null),
+              ),
+              ...juzList.map((j) => chip(
+                    label: appLang == 'bn'
+                        ? '${_num(j)} পারা'
+                        : 'Juz ${_num(j)}',
+                    selected: _juzFilter == j,
+                    onTap: () => setState(
+                        () => _juzFilter = _juzFilter == j ? null : j),
+                  )),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(17, 0, 17, 6), //sizeedit গণনার নিচের ফাঁক
+          child: Text(
+            appLang == 'bn'
+                ? '${_num(resultCount)}টি পাওয়া গেছে'
+                : '$resultCount found',
+            style: TextStyle(fontSize: 12, color: colors.textSecondary),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildEmpty(String message) {
+    final colors = context.appColors;
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.search_off,
+                size: 44, color: colors.textSecondary),
+            const SizedBox(height: 12),
+            Text(
+              message,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 14, color: colors.textSecondary, height: 1.5),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // ─────────────────────────────────────────────────────────
+  Widget _buildDifferentTab() {
+    final items = _filteredDifferent;
+    return Column(
+      children: [
+        _buildFilterBar(items.length),
+        Expanded(
+          child: items.isEmpty
+              ? _buildEmpty(_onlySaved
+                  ? tr('এখনো কোনো জোড়া সেভ করেননি',
+                      'You have not saved any pairs yet')
+                  : tr('এই পারায় কোনো মুতাশাবিহাত নেই',
+                      'No mutashabihat in this juz'))
+              : ListView.builder(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  itemCount: items.length,
+                  itemBuilder: (context, index) =>
+                      _buildDifferentCard(items[index], index + 1),
+                ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSameTab() {
+    final items = _filteredSame;
+    return Column(
+      children: [
+        _buildFilterBar(items.length),
+        Expanded(
+          child: items.isEmpty
+              ? _buildEmpty(_onlySaved
+                  ? tr('এখনো কোনো আয়াত সেভ করেননি',
+                      'You have not saved any ayah yet')
+                  : tr('এই পারায় কিছু পাওয়া যায়নি',
+                      'Nothing found in this juz'))
+              : ListView.builder(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  itemCount: items.length,
+                  itemBuilder: (context, index) =>
+                      _buildSameCard(items[index]),
+                ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildQuizTab() {
+    final colors = context.appColors;
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+      children: [
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(18),
+          decoration: BoxDecoration(
+            color: colors.actionButtonBg,
+            borderRadius: BorderRadius.circular(18),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                tr('নিজেকে যাচাই করুন', 'Test Yourself'),
+                style: TextStyle(
+                    fontSize: 20,
+                    color: colors.actionButtonText,
+                    fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                tr('মুতাশাবিহাত মনে আছে কি না, কুইজ দিয়ে যাচাই করুন।',
+                    'Check your mutashabihat memory with quiz practice.'),
+                style: TextStyle(
+                    fontSize: 13.5,
+                    color: colors.actionButtonText,
+                    height: 1.5),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+        InkWell(
+          borderRadius: BorderRadius.circular(16),
+          onTap: () async {
+            await Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const QuizPage()));
+          },
+          child: Container(
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: colors.cardBg,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: colors.divider),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: colors.actionButtonBg,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(Icons.quiz_outlined,
+                      color: colors.actionButtonText, size: 22),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(tr('কুইজ শুরু করুন', 'Start Quiz'),
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: colors.textPrimary,
+                              fontWeight: FontWeight.w600)),
+                      const SizedBox(height: 2),
+                      Text(tr('কুইজ পেইজে যান', 'Go to Quiz Page'),
+                          style: TextStyle(
+                              fontSize: 12.5,
+                              color: colors.textSecondary)),
+                    ],
+                  ),
+                ),
+                Icon(Icons.chevron_right,
+                    size: 20, color: colors.textSecondary),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  // ─────────────────────────────────────────────────────────
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+
+    // নতুন ডেটা নামলে বা বুকমার্ক বদলালে লিস্ট নিজে থেকেই আপডেট হয়
+    return ValueListenableBuilder<int>(
+      valueListenable: MutashabihatRepo.revision,
+      builder: (context, _, __) => ValueListenableBuilder<int>(
+        valueListenable: MutashabihatBookmarks.revision,
+        builder: (context, __, ___) => Scaffold(
+          backgroundColor: colors.scaffoldBg,
+          appBar: AppBar(
+            backgroundColor: colors.scaffoldBg,
+            elevation: 0,
+            centerTitle: true,
+            title: Text(
+              tr('আয়াতে মুতাশাবিহাত', 'Ayate Mutashabihat'),
+              style: TextStyle(
+                  color: colors.textPrimary,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700),
+            ),
+            iconTheme: IconThemeData(color: colors.textPrimary),
+            bottom: TabBar(
+              controller: _tabController,
+              indicatorColor: colors.primary,
+              indicatorWeight: 2.5,
+              labelColor: colors.textPrimary,
+              unselectedLabelColor: colors.textSecondary,
+              labelStyle: const TextStyle(
+                  fontSize: 13.5, fontWeight: FontWeight.w600),
+              unselectedLabelStyle: const TextStyle(fontSize: 13.5),
+              tabs: [
+                Tab(text: tr('ডিফারেন্ট', 'Different')),
+                Tab(text: tr('সেইম আয়াত', 'Same Ayah')),
+                Tab(text: tr('কুইজ', 'Quiz')),
+              ],
+            ),
+          ),
+          body: TabBarView(
+            controller: _tabController,
+            children: [
+              _buildDifferentTab(),
+              _buildSameTab(),
+              _buildQuizTab(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
