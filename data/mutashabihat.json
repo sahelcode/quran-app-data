@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 4,
   "different": [
     {
       "id": "d001",
@@ -17,7 +17,8 @@
         "juz": 21,
         "pageInJuz": 9,
         "absolutePage": 410
-      }
+      },
+      "verified": false
     },
     {
       "id": "d002",
@@ -35,7 +36,8 @@
         "juz": 23,
         "pageInJuz": 8,
         "absolutePage": 449
-      }
+      },
+      "verified": false
     },
     {
       "id": "d003",
@@ -53,7 +55,8 @@
         "juz": 18,
         "pageInJuz": 4,
         "absolutePage": 345
-      }
+      },
+      "verified": false
     },
     {
       "id": "d004",
@@ -71,7 +74,8 @@
         "juz": 30,
         "pageInJuz": 1,
         "absolutePage": 586
-      }
+      },
+      "verified": false
     },
     {
       "id": "d005",
@@ -89,7 +93,8 @@
         "juz": 21,
         "pageInJuz": 2,
         "absolutePage": 403
-      }
+      },
+      "verified": false
     },
     {
       "id": "d006",
@@ -107,7 +112,8 @@
         "juz": 16,
         "pageInJuz": 15,
         "absolutePage": 316
-      }
+      },
+      "verified": false
     },
     {
       "id": "d007",
@@ -125,7 +131,8 @@
         "juz": 21,
         "pageInJuz": 13,
         "absolutePage": 414
-      }
+      },
+      "verified": false
     },
     {
       "id": "d008",
@@ -143,7 +150,8 @@
         "juz": 20,
         "pageInJuz": 6,
         "absolutePage": 387
-      }
+      },
+      "verified": false
     },
     {
       "id": "d009",
@@ -161,7 +169,8 @@
         "juz": 21,
         "pageInJuz": 11,
         "absolutePage": 412
-      }
+      },
+      "verified": false
     },
     {
       "id": "d010",
@@ -179,7 +188,8 @@
         "juz": 18,
         "pageInJuz": 4,
         "absolutePage": 345
-      }
+      },
+      "verified": false
     },
     {
       "id": "d011",
@@ -197,7 +207,8 @@
         "juz": 27,
         "pageInJuz": 19,
         "absolutePage": 540
-      }
+      },
+      "verified": false
     },
     {
       "id": "d013",
@@ -215,7 +226,8 @@
         "juz": 25,
         "pageInJuz": 13,
         "absolutePage": 494
-      }
+      },
+      "verified": false
     },
     {
       "id": "d014",
@@ -233,7 +245,8 @@
         "juz": 19,
         "pageInJuz": 13,
         "absolutePage": 374
-      }
+      },
+      "verified": false
     },
     {
       "id": "d015",
@@ -251,7 +264,8 @@
         "juz": 29,
         "pageInJuz": 4,
         "absolutePage": 565
-      }
+      },
+      "verified": false
     },
     {
       "id": "d016",
@@ -269,7 +283,8 @@
         "juz": 27,
         "pageInJuz": 4,
         "absolutePage": 525
-      }
+      },
+      "verified": false
     },
     {
       "id": "d017",
@@ -287,7 +302,8 @@
         "juz": 29,
         "pageInJuz": 5,
         "absolutePage": 566
-      }
+      },
+      "verified": false
     },
     {
       "id": "d018",
@@ -307,7 +323,8 @@
         "absolutePage": 19
       },
       "hookBn": "উদাহরণ এন্ট্রি — পরীক্ষার জন্য",
-      "hookEn": "Sample entry for testing"
+      "hookEn": "Sample entry for testing",
+      "verified": false
     },
     {
       "id": "d019",
@@ -327,7 +344,8 @@
         "absolutePage": 53
       },
       "hookBn": "শুরুতে ইন্না নাকি ওয়া — এটাই পার্থক্য",
-      "hookEn": "Starts with inna or wa"
+      "hookEn": "Starts with inna or wa",
+      "verified": false
     },
     {
       "id": "d020",
@@ -364,7 +382,8 @@
         }
       ],
       "hookBn": "৩ জায়গার উদাহরণ — ফা, ওয়া, আর কিছুই না",
-      "hookEn": "3-place sample: fa, wa, none"
+      "hookEn": "3-place sample: fa, wa, none",
+      "verified": false
     },
     {
       "id": "d021",
@@ -411,7 +430,48 @@
         }
       ],
       "hookBn": "৪ জায়গার উদাহরণ — ওয়া, ফা, ছুম্মা, আর কিছুই না",
-      "hookEn": "4-place sample"
+      "hookEn": "4-place sample",
+      "verified": false
+    },
+    {
+      "id": "d022",
+      "verified": false,
+      "ayah1": "وَاعْبُدُوا اللَّهَ وَلَا تُشْرِكُوا بِهِ شَيْئًا",
+      "ayah2": "أَنِ اعْبُدُوا اللَّهَ وَاتَّقُوهُ",
+      "diffWord": "وَاعْبُدُوا اللَّهَ / أَنِ اعْبُدُوا اللَّهَ",
+      "ref1": {
+        "surah": "النساء",
+        "juz": 5,
+        "pageInJuz": 1,
+        "absolutePage": 81
+      },
+      "ref2": {
+        "surah": "نوح",
+        "juz": 29,
+        "pageInJuz": 7,
+        "absolutePage": 570
+      },
+      "hookBn": "নিসায় ওয়া দিয়ে, নূহে আন দিয়ে",
+      "hookEn": "Nisa starts with wa, Nuh with an"
+    },
+    {
+      "id": "d023",
+      "verified": false,
+      "ayah1": "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِلْعَالَمِينَ",
+      "ayah2": "وَمَا أَرْسَلْنَاكَ إِلَّا كَافَّةً لِلنَّاسِ",
+      "diffWord": "رَحْمَةً لِلْعَالَمِينَ / كَافَّةً لِلنَّاسِ",
+      "ref1": {
+        "surah": "الأنبياء",
+        "juz": 17,
+        "pageInJuz": 10,
+        "absolutePage": 331
+      },
+      "ref2": {
+        "surah": "سبأ",
+        "juz": 22,
+        "pageInJuz": 10,
+        "absolutePage": 430
+      }
     }
   ],
   "same": [
@@ -431,7 +491,8 @@
           "pageInJuz": 5,
           "absolutePage": 566
         }
-      ]
+      ],
+      "verified": false
     },
     {
       "id": "s002",
@@ -443,7 +504,8 @@
           "pageInJuz": 3,
           "absolutePage": 384
         }
-      ]
+      ],
+      "verified": false
     },
     {
       "id": "s003",
@@ -455,7 +517,8 @@
           "pageInJuz": 2,
           "absolutePage": 343
         }
-      ]
+      ],
+      "verified": false
     },
     {
       "id": "s004",
@@ -467,7 +530,8 @@
           "pageInJuz": 2,
           "absolutePage": 323
         }
-      ]
+      ],
+      "verified": false
     },
     {
       "id": "s005",
@@ -486,7 +550,8 @@
         "شَدِيدَ",
         "كُلَّ",
         "عَظِيمَ"
-      ]
+      ],
+      "verified": false
     },
     {
       "id": "s006",
@@ -505,7 +570,795 @@
         "مَّةً",
         "لَهُ",
         "فِي"
+      ],
+      "verified": false
+    },
+    {
+      "id": "s007",
+      "verified": false,
+      "ayah": "فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "refs": [
+        {
+          "surah": "الرحمن",
+          "juz": 27,
+          "pageInJuz": 9,
+          "absolutePage": 531
+        },
+        {
+          "surah": "الرحمن",
+          "juz": 27,
+          "pageInJuz": 10,
+          "absolutePage": 532
+        },
+        {
+          "surah": "الرحمن",
+          "juz": 27,
+          "pageInJuz": 11,
+          "absolutePage": 533
+        },
+        {
+          "surah": "الرحمن",
+          "juz": 27,
+          "pageInJuz": 12,
+          "absolutePage": 534
+        }
+      ],
+      "note": "সূরা আর-রাহমানে ৩১ বার — নমুনায় ৪টি রাখা হয়েছে"
+    },
+    {
+      "id": "s008",
+      "verified": false,
+      "ayah": "وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِنْ مُدَّكِرٍ",
+      "refs": [
+        {
+          "surah": "القمر",
+          "juz": 27,
+          "pageInJuz": 13,
+          "absolutePage": 529
+        },
+        {
+          "surah": "القمر",
+          "juz": 27,
+          "pageInJuz": 14,
+          "absolutePage": 529
+        },
+        {
+          "surah": "القمر",
+          "juz": 27,
+          "pageInJuz": 14,
+          "absolutePage": 530
+        },
+        {
+          "surah": "القمر",
+          "juz": 27,
+          "pageInJuz": 15,
+          "absolutePage": 530
+        }
+      ],
+      "completionText": "وَلَقَدْ يَسَّرْنَا الْقُرْآنَ ...... فَهَلْ مِنْ مُدَّكِرٍ",
+      "missingWord": "لِلذِّكْرِ",
+      "completionWrongOptions": [
+        "لِلْعَالَمِينَ",
+        "لِلْمُتَّقِينَ",
+        "لِلنَّاسِ"
       ]
+    },
+    {
+      "id": "s009",
+      "verified": false,
+      "ayah": "وَيْلٌ يَوْمَئِذٍ لِلْمُكَذِّبِينَ",
+      "refs": [
+        {
+          "surah": "المرسلات",
+          "juz": 29,
+          "pageInJuz": 11,
+          "absolutePage": 580
+        },
+        {
+          "surah": "المرسلات",
+          "juz": 29,
+          "pageInJuz": 11,
+          "absolutePage": 580
+        },
+        {
+          "surah": "المرسلات",
+          "juz": 29,
+          "pageInJuz": 12,
+          "absolutePage": 581
+        }
+      ],
+      "note": "সূরা আল-মুরসালাতে ১০ বার — নমুনায় ৩টি"
+    },
+    {
+      "id": "s010",
+      "verified": false,
+      "ayah": "إِنَّ فِي ذَلِكَ لَآيَةً وَمَا كَانَ أَكْثَرُهُمْ مُؤْمِنِينَ",
+      "refs": [
+        {
+          "surah": "الشعراء",
+          "juz": 19,
+          "pageInJuz": 10,
+          "absolutePage": 371
+        },
+        {
+          "surah": "الشعراء",
+          "juz": 19,
+          "pageInJuz": 12,
+          "absolutePage": 373
+        },
+        {
+          "surah": "الشعراء",
+          "juz": 19,
+          "pageInJuz": 13,
+          "absolutePage": 374
+        }
+      ],
+      "note": "সূরা আশ-শুআরায় ৮ বার — নমুনায় ৩টি"
+    },
+    {
+      "id": "s011",
+      "verified": false,
+      "ayah": "وَإِنَّ رَبَّكَ لَهُوَ الْعَزِيزُ الرَّحِيمُ",
+      "refs": [
+        {
+          "surah": "الشعراء",
+          "juz": 19,
+          "pageInJuz": 10,
+          "absolutePage": 371
+        },
+        {
+          "surah": "الشعراء",
+          "juz": 19,
+          "pageInJuz": 12,
+          "absolutePage": 373
+        },
+        {
+          "surah": "الشعراء",
+          "juz": 19,
+          "pageInJuz": 14,
+          "absolutePage": 375
+        }
+      ],
+      "note": "সূরা আশ-শুআরায় ৮ বার — নমুনায় ৩টি"
+    },
+    {
+      "id": "s012",
+      "verified": false,
+      "ayah": "فَكَيْفَ كَانَ عَذَابِي وَنُذُرِ",
+      "refs": [
+        {
+          "surah": "القمر",
+          "juz": 27,
+          "pageInJuz": 13,
+          "absolutePage": 529
+        },
+        {
+          "surah": "القمر",
+          "juz": 27,
+          "pageInJuz": 14,
+          "absolutePage": 530
+        }
+      ]
+    }
+  ],
+  "continuation": [
+    {
+      "id": "c001",
+      "prompt": "إِنَّكَ لَا",
+      "answer": "تُسْمِعُ الْمَوْتَى",
+      "wrong": [
+        "شَيْءٍ قَدِيرٌ",
+        "بَشَرٌ مِثْلُنَا",
+        "عَزْمِ الْأُمُورِ"
+      ],
+      "ref": {
+        "surah": "النمل",
+        "juz": 20,
+        "pageInJuz": 3,
+        "absolutePage": 384
+      }
+    },
+    {
+      "id": "c002",
+      "prompt": "فَإِنَّكَ لَا",
+      "answer": "تُسْمِعُ الْمَوْتَى",
+      "wrong": [
+        "أُمَّةً وَاحِدَةً",
+        "عَزْمِ الْأُمُورِ",
+        "كُنَّا طَاغِينَ"
+      ],
+      "ref": {
+        "surah": "الروم",
+        "juz": 21,
+        "pageInJuz": 9,
+        "absolutePage": 410
+      }
+    },
+    {
+      "id": "c003",
+      "prompt": "إِنَّ هَذَا لَهُوَ",
+      "answer": "الْفَصْلُ الْمُبِينُ",
+      "wrong": [
+        "الْعَزِيزُ الرَّحِيمُ",
+        "رَحْمَةً لِلْعَالَمِينَ",
+        "بَشَرٌ مِثْلُنَا"
+      ],
+      "ref": {
+        "surah": "النمل",
+        "juz": 19,
+        "pageInJuz": 16,
+        "absolutePage": 377
+      }
+    },
+    {
+      "id": "c004",
+      "prompt": "إِنَّ هَذَا لَهُوَ",
+      "answer": "الْبَلَاءُ الْمُبِينُ",
+      "wrong": [
+        "مِيقَاتُهُمْ أَجْمَعِينَ",
+        "رَبِّكُمَا تُكَذِّبَانِ",
+        "كُنَّا طَاغِينَ"
+      ],
+      "ref": {
+        "surah": "الصافات",
+        "juz": 23,
+        "pageInJuz": 8,
+        "absolutePage": 449
+      }
+    },
+    {
+      "id": "c005",
+      "prompt": "إِنَّ يَوْمَ الْفَصْلِ",
+      "answer": "مِيقَاتُهُمْ أَجْمَعِينَ",
+      "wrong": [
+        "أُمَّةً وَاحِدَةً",
+        "عَزْمِ الْأُمُورِ",
+        "الْفَصْلُ الْمُبِينُ"
+      ],
+      "ref": {
+        "surah": "الدخان",
+        "juz": 25,
+        "pageInJuz": 16,
+        "absolutePage": 497
+      }
+    },
+    {
+      "id": "c006",
+      "prompt": "إِنَّ يَوْمَ الْفَصْلِ",
+      "answer": "كَانَ مِيقَاتًا",
+      "wrong": [
+        "الْبَلَاءُ الْمُبِينُ",
+        "فَاكِهَةٌ كَثِيرَةٌ",
+        "مِنْ مُدَّكِرٍ"
+      ],
+      "ref": {
+        "surah": "النبأ",
+        "juz": 30,
+        "pageInJuz": 1,
+        "absolutePage": 586
+      }
+    },
+    {
+      "id": "c007",
+      "prompt": "ثُمَّ لَا يَمُوتُ فِيهَا",
+      "answer": "وَلَا يَحْيَى",
+      "wrong": [
+        "مِنْ مُدَّكِرٍ",
+        "مِيقَاتُهُمْ أَجْمَعِينَ",
+        "كُنَّا ظَالِمِينَ"
+      ],
+      "ref": {
+        "surah": "الأعلى",
+        "juz": 30,
+        "pageInJuz": 12,
+        "absolutePage": 597
+      }
+    },
+    {
+      "id": "c008",
+      "prompt": "لَا يَمُوتُ فِيهَا",
+      "answer": "وَلَا يَحْيَى",
+      "wrong": [
+        "نَفْسٍ شَيْئًا",
+        "بِهِ شَيْئًا",
+        "مِيقَاتُهُمْ أَجْمَعِينَ"
+      ],
+      "ref": {
+        "surah": "طه",
+        "juz": 16,
+        "pageInJuz": 15,
+        "absolutePage": 316
+      }
+    },
+    {
+      "id": "c009",
+      "prompt": "مِنْ دُونِهِ",
+      "answer": "هُوَ الْبَاطِلُ",
+      "wrong": [
+        "أَكْثَرُهُمْ مُؤْمِنِينَ",
+        "الْبَلَاءُ الْمُبِينُ",
+        "فَاكِهَةٌ كَثِيرَةٌ"
+      ],
+      "ref": {
+        "surah": "الحج",
+        "juz": 17,
+        "pageInJuz": 18,
+        "absolutePage": 339
+      }
+    },
+    {
+      "id": "c010",
+      "prompt": "قَالَتْ رَبِّ إِنِّي",
+      "answer": "ظَلَمْتُ نَفْسِي",
+      "wrong": [
+        "الْفَصْلُ الْمُبِينُ",
+        "اللَّهَ وَاتَّقُوهُ",
+        "أُمَّةً وَاحِدَةً"
+      ],
+      "ref": {
+        "surah": "النمل",
+        "juz": 19,
+        "pageInJuz": 19,
+        "absolutePage": 380
+      }
+    },
+    {
+      "id": "c011",
+      "prompt": "قَالَ رَبِّ إِنِّي",
+      "answer": "ظَلَمْتُ نَفْسِي",
+      "wrong": [
+        "كُنَّا ظَالِمِينَ",
+        "مِنْ مُدَّكِرٍ",
+        "كُنَّا طَاغِينَ"
+      ],
+      "ref": {
+        "surah": "القصص",
+        "juz": 20,
+        "pageInJuz": 6,
+        "absolutePage": 387
+      }
+    },
+    {
+      "id": "c012",
+      "prompt": "إِنَّ ذَلِكَ لَمِنْ",
+      "answer": "عَزْمِ الْأُمُورِ",
+      "wrong": [
+        "هُوَ الْبَاطِلُ",
+        "مِنْ مُدَّكِرٍ",
+        "أُمَّةً وَاحِدَةً"
+      ],
+      "ref": {
+        "surah": "الشورى",
+        "juz": 25,
+        "pageInJuz": 6,
+        "absolutePage": 487
+      }
+    },
+    {
+      "id": "c013",
+      "prompt": "إِنَّ ذَلِكَ مِنْ",
+      "answer": "عَزْمِ الْأُمُورِ",
+      "wrong": [
+        "رَبِّكُمَا تُكَذِّبَانِ",
+        "الْفَصْلُ الْمُبِينُ",
+        "عَذَابِي وَنُذُرِ"
+      ],
+      "ref": {
+        "surah": "لقمان",
+        "juz": 21,
+        "pageInJuz": 11,
+        "absolutePage": 412
+      }
+    },
+    {
+      "id": "c014",
+      "prompt": "إِنَّ هَذِهِ أُمَّتُكُمْ",
+      "answer": "أُمَّةً وَاحِدَةً",
+      "wrong": [
+        "عَذَابِي وَنُذُرِ",
+        "وَلَا يَحْيَى",
+        "كُنَّا طَاغِينَ"
+      ],
+      "ref": {
+        "surah": "الأنبياء",
+        "juz": 17,
+        "pageInJuz": 9,
+        "absolutePage": 330
+      }
+    },
+    {
+      "id": "c015",
+      "prompt": "وَإِنَّ هَذِهِ أُمَّتُكُمْ",
+      "answer": "أُمَّةً وَاحِدَةً",
+      "wrong": [
+        "اللَّهَ وَاتَّقُوهُ",
+        "رَحْمَةً لِلْعَالَمِينَ",
+        "بِهِ شَيْئًا"
+      ],
+      "ref": {
+        "surah": "المؤمنون",
+        "juz": 18,
+        "pageInJuz": 4,
+        "absolutePage": 345
+      }
+    },
+    {
+      "id": "c016",
+      "prompt": "لَكُمْ فِيهَا",
+      "answer": "فَوَاكِهُ كَثِيرَةٌ",
+      "wrong": [
+        "كَافَّةً لِلنَّاسِ",
+        "مِيقَاتُهُمْ أَجْمَعِينَ",
+        "رَحْمَةً لِلْعَالَمِينَ"
+      ],
+      "ref": {
+        "surah": "المؤمنون",
+        "juz": 18,
+        "pageInJuz": 2,
+        "absolutePage": 343
+      }
+    }
+  ],
+  "basics": [
+    {
+      "id": "b001",
+      "questionBn": "কুরআনে মোট কতটি সূরা আছে?",
+      "questionEn": "How many surahs are in the Quran?",
+      "optionsBn": [
+        "১১০",
+        "১১২",
+        "১১৪",
+        "১১৬"
+      ],
+      "optionsEn": [
+        "110",
+        "112",
+        "114",
+        "116"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b002",
+      "questionBn": "কুরআনে মোট কতটি পারা আছে?",
+      "questionEn": "How many juz are in the Quran?",
+      "optionsBn": [
+        "২৮",
+        "২৯",
+        "৩০",
+        "৩১"
+      ],
+      "optionsEn": [
+        "28",
+        "29",
+        "30",
+        "31"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b003",
+      "questionBn": "কুরআনে মোট কতটি রুকু আছে?",
+      "questionEn": "How many ruku are in the Quran?",
+      "optionsBn": [
+        "৫২০",
+        "৫৪০",
+        "৫৫৮",
+        "৫৭০"
+      ],
+      "optionsEn": [
+        "520",
+        "540",
+        "558",
+        "570"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b004",
+      "questionBn": "কুরআনে তিলাওয়াতের সিজদা কতটি?",
+      "questionEn": "How many sajdah of recitation?",
+      "optionsBn": [
+        "১২",
+        "১৩",
+        "১৪",
+        "১৫"
+      ],
+      "optionsEn": [
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b005",
+      "questionBn": "কুরআনে কতটি মানজিল আছে?",
+      "questionEn": "How many manzil are in the Quran?",
+      "optionsBn": [
+        "৫",
+        "৬",
+        "৭",
+        "৮"
+      ],
+      "optionsEn": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b006",
+      "questionBn": "সূরা আল-ফাতিহায় কত আয়াত?",
+      "questionEn": "How many ayahs in Surah Al-Fatihah?",
+      "optionsBn": [
+        "৫",
+        "৬",
+        "৭",
+        "৮"
+      ],
+      "optionsEn": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b007",
+      "questionBn": "সূরা আল-বাকারায় কত আয়াত?",
+      "questionEn": "How many ayahs in Surah Al-Baqarah?",
+      "optionsBn": [
+        "২৭৬",
+        "২৮০",
+        "২৮৬",
+        "২৯০"
+      ],
+      "optionsEn": [
+        "276",
+        "280",
+        "286",
+        "290"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b008",
+      "questionBn": "সূরা আল-বাকারায় কত রুকু?",
+      "questionEn": "How many ruku in Surah Al-Baqarah?",
+      "optionsBn": [
+        "৩০",
+        "৩৫",
+        "৪০",
+        "৪৫"
+      ],
+      "optionsEn": [
+        "30",
+        "35",
+        "40",
+        "45"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b009",
+      "questionBn": "সূরা আলে ইমরানে কত রুকু?",
+      "questionEn": "How many ruku in Surah Aal-Imran?",
+      "optionsBn": [
+        "১৮",
+        "২০",
+        "২২",
+        "২৪"
+      ],
+      "optionsEn": [
+        "18",
+        "20",
+        "22",
+        "24"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "b010",
+      "questionBn": "কুরআনের সবচেয়ে বড় সূরা কোনটি?",
+      "questionEn": "Which is the longest surah?",
+      "optionsBn": [
+        "আলে ইমরান",
+        "আল-বাকারা",
+        "আন-নিসা",
+        "আল-আরাফ"
+      ],
+      "optionsEn": [
+        "Aal-Imran",
+        "Al-Baqarah",
+        "An-Nisa",
+        "Al-A'raf"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "b011",
+      "questionBn": "কুরআনের সবচেয়ে ছোট সূরা কোনটি?",
+      "questionEn": "Which is the shortest surah?",
+      "optionsBn": [
+        "আল-কাওসার",
+        "আল-ইখলাস",
+        "আন-নাসর",
+        "আল-ফালাক"
+      ],
+      "optionsEn": [
+        "Al-Kawthar",
+        "Al-Ikhlas",
+        "An-Nasr",
+        "Al-Falaq"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "b012",
+      "questionBn": "সূরা ইয়াসিন কত নম্বর সূরা?",
+      "questionEn": "What number is Surah Ya-Sin?",
+      "optionsBn": [
+        "৩৪",
+        "৩৫",
+        "৩৬",
+        "৩৭"
+      ],
+      "optionsEn": [
+        "34",
+        "35",
+        "36",
+        "37"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b013",
+      "questionBn": "সূরা আর-রাহমান কত নম্বর সূরা?",
+      "questionEn": "What number is Surah Ar-Rahman?",
+      "optionsBn": [
+        "৫৩",
+        "৫৪",
+        "৫৫",
+        "৫৬"
+      ],
+      "optionsEn": [
+        "53",
+        "54",
+        "55",
+        "56"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b014",
+      "questionBn": "সূরা আল-মুলক কত নম্বর সূরা?",
+      "questionEn": "What number is Surah Al-Mulk?",
+      "optionsBn": [
+        "৬৫",
+        "৬৬",
+        "৬৭",
+        "৬৮"
+      ],
+      "optionsEn": [
+        "65",
+        "66",
+        "67",
+        "68"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b015",
+      "questionBn": "সূরা আল-কাহফ কত নম্বর সূরা?",
+      "questionEn": "What number is Surah Al-Kahf?",
+      "optionsBn": [
+        "১৬",
+        "১৭",
+        "১৮",
+        "১৯"
+      ],
+      "optionsEn": [
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b016",
+      "questionBn": "সূরা আল-ইখলাস কত নম্বর সূরা?",
+      "questionEn": "What number is Surah Al-Ikhlas?",
+      "optionsBn": [
+        "১১০",
+        "১১১",
+        "১১২",
+        "১১৩"
+      ],
+      "optionsEn": [
+        "110",
+        "111",
+        "112",
+        "113"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b017",
+      "questionBn": "কুরআনের শেষ সূরা কোনটি?",
+      "questionEn": "Which is the last surah?",
+      "optionsBn": [
+        "আল-ফালাক",
+        "আন-নাস",
+        "আল-ইখলাস",
+        "আন-নাসর"
+      ],
+      "optionsEn": [
+        "Al-Falaq",
+        "An-Nas",
+        "Al-Ikhlas",
+        "An-Nasr"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "b018",
+      "questionBn": "প্রথম পারা কোন শব্দ দিয়ে শুরু?",
+      "questionEn": "Which word starts the first juz?",
+      "optionsBn": [
+        "الحمد",
+        "الم",
+        "بسم",
+        "اقرأ"
+      ],
+      "optionsEn": [
+        "الحمد",
+        "الم",
+        "بسم",
+        "اقرأ"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "b019",
+      "questionBn": "দ্বিতীয় পারা কোন শব্দ দিয়ে শুরু?",
+      "questionEn": "Which word starts the second juz?",
+      "optionsBn": [
+        "سيقول",
+        "الم",
+        "تلك الرسل",
+        "لن تنالوا"
+      ],
+      "optionsEn": [
+        "سيقول",
+        "الم",
+        "تلك الرسل",
+        "لن تنالوا"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "b020",
+      "questionBn": "ত্রিশতম পারা কোন শব্দ দিয়ে শুরু?",
+      "questionEn": "Which word starts the 30th juz?",
+      "optionsBn": [
+        "عم",
+        "تبارك",
+        "قد سمع",
+        "حم"
+      ],
+      "optionsEn": [
+        "عم",
+        "تبارك",
+        "قد سمع",
+        "حم"
+      ],
+      "correctIndex": 0
     }
   ]
 }
