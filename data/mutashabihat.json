@@ -307,6 +307,42 @@
         "absolutePage": 410
       }
     },
+    {
+      "id": "d019",
+      "ayah1": "إِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
+      "ayah2": "فَإِنَّكَ لَا تُسْمِعُ الْمَوْتَى",
+      "diffWord": "إِنَّكَ / فَإِنَّكَ",
+      "ref1": {
+        "surah": "النمل",
+        "juz": 20,
+        "pageInJuz": 3,
+        "absolutePage": 384
+      },
+      "ref2": {
+        "surah": "الروم",
+        "juz": 21,
+        "pageInJuz": 9,
+        "absolutePage": 410
+      }
+    },
+    {
+      "id": "d020",
+      "ayah1": "إِنَّكَ لَاتُسْمِعُ الْمَوْتَى",
+      "ayah2": "فَإِنَّكَ لَا تُسْمعُ الْمَوْتَى",
+      "diffWord": "إِنَّكَ / فَإِنَّكَ",
+      "ref1": {
+        "surah": "النمل",
+        "juz": 20,
+        "pageInJuz": 3,
+        "absolutePage": 384
+      },
+      "ref2": {
+        "surah": "الروم",
+        "juz": 21,
+        "pageInJuz": 9,
+        "absolutePage": 410
+      }
+    },
   ],
   "same": [
     {
