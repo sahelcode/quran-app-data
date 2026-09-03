@@ -1,13 +1,12 @@
 {
-  "_readme": "startsAt / endsAt দিয়ে তারিখ ঠিক করো। খালি রাখলে সবসময় দেখাবে। বার্তা বন্ধ করতে হয় তারিখ পার হতে দাও, নয়তো এখান থেকে মুছে দাও।",
   "leaderboardEnabled": true,
   "announcements": [
     {
-      "id": "support-2026-10-05",
+      "id": "support-test",
       "type": "support",
       "priority": 10,
-      "startsAt": "2026-10-04T00:00:00",
-      "endsAt": "2026-10-06T00:00:00",
+      "startsAt": "",
+      "endsAt": "",
       "titleBn": "এই অ্যাপ বিজ্ঞাপনমুক্ত রাখতে সাহায্য করুন",
       "titleEn": "Help keep this app ad-free",
       "bodyBn": "সদকায়ে জারিয়া হিসেবে সামান্য অনুদানই যথেষ্ট।",
