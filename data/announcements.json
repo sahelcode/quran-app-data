@@ -1,5 +1,5 @@
 {
-  "leaderboardEnabled": true,
+  "leaderboardEnabled": false,
   "announcements": [
     {
       "id": "support-test",
