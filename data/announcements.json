@@ -1,6 +1,19 @@
 {
-  "leaderboardEnabled": false,
+  "leaderboardEnabled": true,
   "announcements": [
-
+    {
+      "id": "support-test",
+      "type": "support",
+      "priority": 10,
+      "startsAt": "",
+      "endsAt": "",
+      "titleBn": "এই অ্যাপ বিজ্ঞাপনমুক্ত রাখতে সাহায্য করুন",
+      "titleEn": "Help keep this app ad-free",
+      "bodyBn": "সদকায়ে জারিয়া হিসেবে সামান্য অনুদানই যথেষ্ট।",
+      "bodyEn": "A small gift as ongoing charity is enough.",
+      "actionBn": "দেখুন",
+      "actionEn": "View",
+      "actionType": "support"
+    }
   ]
 }
