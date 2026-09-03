@@ -1,34 +1,20 @@
 {
+  "_readme": "startsAt / endsAt দিয়ে তারিখ ঠিক করো। খালি রাখলে সবসময় দেখাবে। বার্তা বন্ধ করতে হয় তারিখ পার হতে দাও, নয়তো এখান থেকে মুছে দাও।",
+  "leaderboardEnabled": true,
   "announcements": [
     {
-      "id": "support-2026-09",
+      "id": "support-2026-10-05",
       "type": "support",
       "priority": 10,
-      "dismissible": false,
+      "startsAt": "2026-10-04T00:00:00",
+      "endsAt": "2026-10-06T00:00:00",
       "titleBn": "এই অ্যাপ বিজ্ঞাপনমুক্ত রাখতে সাহায্য করুন",
       "titleEn": "Help keep this app ad-free",
-      "bodyBn": "হিফজ কুরআনে কোনো বিজ্ঞাপন নেই, কোনো তথ্য সংগ্রহ হয় না। আপনার সদকায়ে জারিয়া এটি চালু রাখতে সাহায্য করবে।",
-      "bodyEn": "Hifz Quran has no ads and collects no data. Your ongoing charity keeps it running.",
-      "actionBn": "কীভাবে সাহায্য করব",
-      "actionEn": "How to help",
-      "actionType": "support",
-      "startsAt": "2026-09-01",
-      "endsAt": "2026-09-10"
-    },
-    {
-      "id": "mutashabihat-intro",
-      "type": "info",
-      "priority": 5,
-      "dismissible": true,
-      "titleBn": "আয়াতে মুতাশাবিহাত দেখেছেন?",
-      "titleEn": "Have you tried Ayate Mutashabihat?",
-      "bodyBn": "যে আয়াতগুলো দেখতে প্রায় একই কিন্তু এক-দুই শব্দে পার্থক্য — সেগুলো পাশাপাশি দেখে অনুশীলন করুন।",
-      "bodyEn": "Similar ayahs that differ by a word or two, shown side by side for practice.",
-      "actionBn": "",
-      "actionEn": "",
-      "actionType": "none",
-      "startsAt": "2026-09-10",
-      "endsAt": "2026-09-10"
+      "bodyBn": "সদকায়ে জারিয়া হিসেবে সামান্য অনুদানই যথেষ্ট।",
+      "bodyEn": "A small gift as ongoing charity is enough.",
+      "actionBn": "দেখুন",
+      "actionEn": "View",
+      "actionType": "support"
     }
   ]
 }
