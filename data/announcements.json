@@ -4,7 +4,7 @@
       "id": "support-2026-09",
       "type": "support",
       "priority": 10,
-      "dismissible": true,
+      "dismissible": false,
       "titleBn": "এই অ্যাপ বিজ্ঞাপনমুক্ত রাখতে সাহায্য করুন",
       "titleEn": "Help keep this app ad-free",
       "bodyBn": "হিফজ কুরআনে কোনো বিজ্ঞাপন নেই, কোনো তথ্য সংগ্রহ হয় না। আপনার সদকায়ে জারিয়া এটি চালু রাখতে সাহায্য করবে।",
@@ -12,7 +12,7 @@
       "actionBn": "কীভাবে সাহায্য করব",
       "actionEn": "How to help",
       "actionType": "support",
-      "startsAt": "",
+      "startsAt": "2026-09-10",
       "endsAt": "2026-09-10"
     },
     {
@@ -27,8 +27,8 @@
       "actionBn": "",
       "actionEn": "",
       "actionType": "none",
-      "startsAt": "",
-      "endsAt": ""
+      "startsAt": "2026-09-10",
+      "endsAt": "2026-09-10"
     }
   ]
 }
