@@ -10,7 +10,7 @@
     "actionBn": "দেখুন",
     "actionEn": "View",
     "actionType": "support",
-    "actionUrl": ""
+    "actionUrl": "https://github.com/sahelcode/quran-app-data/blob/main/data/announcements.json"
   },
   "leaderboardEnabled": true
 }
