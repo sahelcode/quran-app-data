@@ -9,7 +9,7 @@
     "bodyEn": "A small gift as ongoing charity is enough.",
     "actionBn": "দেখুন",
     "actionEn": "View",
-    "actionType": "support",
+    "actionType": "Go",
     "actionUrl": "https://github.com/sahelcode/quran-app-data/blob/main/data/announcements.json"
   },
   "leaderboardEnabled": true
