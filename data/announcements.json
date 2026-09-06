@@ -1,6 +1,6 @@
 {
   "_readme": "showAnnouncement true করলে কার্ড দেখাবে, false করলে দেখাবে না। GitHub এ কমিট করার পর ৫ মিনিট পর্যন্ত পুরনো লেখা দেখাতে পারে (GitHub এর ক্যাশ), তবে অ্যাপে ক্যাশ এড়ানোর ব্যবস্থা আছে।",
-  "showAnnouncement": true,
+  "showAnnouncement": false,
   "announcement": {
     "type": "support",
     "titleBn": "এই অ্যাপ বিজ্ঞাপনমুক্ত রাখতে সাহায্য করুন",
