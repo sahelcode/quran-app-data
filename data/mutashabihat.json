@@ -305,9 +305,8 @@
       },
       "verified": false
     },
-
-    
-[
+  ]
+    [
   {
     "id": "d101",
     "ayah1": "لِئَلَّا يَكُونَ لِلنَّاسِ عَلَيْكُمْ حُجَّةٌ",
@@ -334,6 +333,306 @@
     "ayah1": "وَمَن كَفَرَ فَإِنَّ رَبِّى غَنِىٌّ كَرِيمٌ",
     "ayah2": "وَمَن كَفَرَ فَإِنَّ ٱللَّهَ غَنِىٌّ حَمِيدٌ",
     "diffWord": "رَبِّى غَنِىٌّ كَرِيمٌ / ٱللَّهَ غَنِىٌّ حَمِيدٌ",
+    "ref1": {
+      "surah": "النمل",
+      "juz": 19,
+      "pageInJuz": 19,
+      "absolutePage": 380
+    },
+    "ref2": {
+      "surah": "لقمان",
+      "juz": 21,
+      "pageInJuz": 11,
+      "absolutePage": 412
+    },
+    "hookBn": "নমল রব্বী, লুকমান আল্লাহ",
+    "hookEn": "Naml=Rabbi, Luqman=Allah",
+    "verified": false
+  },
+  {
+    "id": "d103",
+    "ayah1": "إِنَّ ٱللَّهَ قَوِىٌّ شَدِيدُ ٱلْعِقَابِ",
+    "ayah2": "إِنَّهُۥ قَوِىٌّ شَدِيدُ ٱلْعِقَابِ",
+    "diffWord": "إِنَّ ٱللَّهَ / إِنَّهُۥ",
+    "ref1": {
+      "surah": "الأنفال",
+      "juz": 10,
+      "pageInJuz": 2,
+      "absolutePage": 183
+    },
+    "ref2": {
+      "surah": "المؤمن",
+      "juz": 24,
+      "pageInJuz": 8,
+      "absolutePage": 469
+    },
+    "hookBn": "আনফাল বড়, মু'মিন ছোট",
+    "hookEn": "Anfal long, Mumin short",
+    "verified": false,
+    "needsCheck": true
+  },
+  {
+    "id": "d104",
+    "ayah1": "وَقُودُهَا ٱلنَّاسُ وَٱلْحِجَارَةُ",
+    "ayah2": "وَقُودُهَا ٱلنَّاسُ وَٱلْحِجَارَةُ",
+    "diffWord": "",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 1,
+      "pageInJuz": 4,
+      "absolutePage": 5
+    },
+    "ref2": {
+      "surah": "التحريم",
+      "juz": 28,
+      "pageInJuz": 19,
+      "absolutePage": 560
+    },
+    "hookBn": "হুবহু এক, দুই জায়গায়",
+    "hookEn": "Identical in both",
+    "verified": false
+  },
+  {
+    "id": "d105",
+    "ayah1": "مَاذَآ أَرَادَ ٱللَّهُ بِهَٰذَا مَثَلًا",
+    "ayah2": "مَاذَآ أَرَادَ ٱللَّهُ بِهَٰذَا مَثَلًا",
+    "diffWord": "",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 1,
+      "pageInJuz": 4,
+      "absolutePage": 5
+    },
+    "ref2": {
+      "surah": "المدثر",
+      "juz": 29,
+      "pageInJuz": 18,
+      "absolutePage": 579
+    },
+    "hookBn": "একই বাক্য, দুই সূরা",
+    "hookEn": "Same words, two surahs",
+    "verified": false,
+    "needsCheck": true
+  },
+  {
+    "id": "d106",
+    "ayah1": "أَن يُوصَلَ وَيُفْسِدُونَ فِى ٱلْأَرْضِ",
+    "ayah2": "أَن يُوصَلَ وَيُفْسِدُونَ فِى ٱلْأَرْضِ",
+    "ayah3": "أَن يُوصَلَ وَيَخْشَوْنَ رَبَّهُمْ",
+    "diffWord": "وَيُفْسِدُونَ فِى ٱلْأَرْضِ / وَيَخْشَوْنَ رَبَّهُمْ",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 1,
+      "pageInJuz": 4,
+      "absolutePage": 5
+    },
+    "ref2": {
+      "surah": "الرعد",
+      "juz": 13,
+      "pageInJuz": 11,
+      "absolutePage": 252
+    },
+    "ref3": {
+      "surah": "الرعد",
+      "juz": 13,
+      "pageInJuz": 11,
+      "absolutePage": 252
+    },
+    "hookBn": "রা'দে দুই, বাকারা এক",
+    "hookEn": "Ra'd has both forms",
+    "verified": false
+  },
+  {
+    "id": "d107",
+    "ayah1": "وَلَكُمْ فِى ٱلْأَرْضِ مُسْتَقَرٌّ وَمَتَٰعٌ إِلَىٰ حِينٍ",
+    "ayah2": "وَلَكُمْ فِى ٱلْأَرْضِ مُسْتَقَرٌّ وَمَتَٰعٌ إِلَىٰ حِينٍ",
+    "diffWord": "",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 1,
+      "pageInJuz": 5,
+      "absolutePage": 6
+    },
+    "ref2": {
+      "surah": "الأعراف",
+      "juz": 8,
+      "pageInJuz": 12,
+      "absolutePage": 153
+    },
+    "hookBn": "আদমের নামা, দুইবার",
+    "hookEn": "Adam's descent, twice",
+    "verified": false
+  },
+  {
+    "id": "d108",
+    "ayah1": "فَإِمَّا يَأْتِيَنَّكُم مِّنِّى هُدًى فَمَن تَبِعَ",
+    "ayah2": "فَإِمَّا يَأْتِيَنَّكُم مِّنِّى هُدًى فَمَنِ ٱتَّبَعَ",
+    "diffWord": "فَمَن تَبِعَ / فَمَنِ ٱتَّبَعَ",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 1,
+      "pageInJuz": 6,
+      "absolutePage": 7
+    },
+    "ref2": {
+      "surah": "طه",
+      "juz": 16,
+      "pageInJuz": 19,
+      "absolutePage": 320
+    },
+    "hookBn": "বাকারা ছোট, তোহা বড়",
+    "hookEn": "Baqarah short, Taha long",
+    "verified": false,
+    "needsCheck": true
+  },
+  {
+    "id": "d109",
+    "ayah1": "وَلَقَدْ جَآءَكُم مُّوسَىٰ بِٱلْبَيِّنَٰتِ",
+    "ayah2": "وَلَقَدْ جَآءَهُم مُّوسَىٰ بِٱلْبَيِّنَٰتِ",
+    "diffWord": "جَآءَكُم / جَآءَهُم",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 1,
+      "pageInJuz": 13,
+      "absolutePage": 14
+    },
+    "ref2": {
+      "surah": "العنكبوت",
+      "juz": 20,
+      "pageInJuz": 20,
+      "absolutePage": 401
+    },
+    "hookBn": "বাকারা কুম, আনকাবুত হুম",
+    "hookEn": "Baqarah kum, Ankabut hum",
+    "verified": false,
+    "needsCheck": true
+  },
+  {
+    "id": "d110",
+    "ayah1": "قُلْ هَاتُوا۟ بُرْهَٰنَكُمْ إِن كُنتُمْ صَٰدِقِينَ",
+    "ayah2": "قُلْ هَاتُوا۟ بُرْهَٰنَكُمْ إِن كُنتُمْ صَٰدِقِينَ",
+    "ayah3": "قُلْ هَاتُوا۟ بُرْهَٰنَكُمْ هَٰذَا ذِكْرُ مَن مَّعِىَ",
+    "diffWord": "إِن كُنتُمْ صَٰدِقِينَ / هَٰذَا ذِكْرُ مَن مَّعِىَ",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 1,
+      "pageInJuz": 16,
+      "absolutePage": 17
+    },
+    "ref2": {
+      "surah": "النمل",
+      "juz": 20,
+      "pageInJuz": 1,
+      "absolutePage": 382
+    },
+    "ref3": {
+      "surah": "الأنبياء",
+      "juz": 17,
+      "pageInJuz": 2,
+      "absolutePage": 323
+    },
+    "hookBn": "আম্বিয়া আলাদা",
+    "hookEn": "Anbiya is the odd one",
+    "verified": false,
+    "needsCheck": true
+  },
+  {
+    "id": "d111",
+    "ayah1": "أَوَلَوْ كَانَ ءَابَآؤُهُمْ لَا يَعْقِلُونَ شَيْـًٔا وَلَا يَهْتَدُونَ",
+    "ayah2": "أَوَلَوْ كَانَ ءَابَآؤُهُمْ لَا يَعْلَمُونَ شَيْـًٔا وَلَا يَهْتَدُونَ",
+    "diffWord": "يَعْقِلُونَ / يَعْلَمُونَ",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 2,
+      "pageInJuz": 4,
+      "absolutePage": 25
+    },
+    "ref2": {
+      "surah": "المائدة",
+      "juz": 7,
+      "pageInJuz": 4,
+      "absolutePage": 125
+    },
+    "hookBn": "বাকারা আকল, মায়েদা ইলম",
+    "hookEn": "Baqarah aql, Maidah ilm",
+    "verified": false,
+    "needsCheck": true
+  },
+  {
+    "id": "d112",
+    "ayah1": "فَمَنِ ٱعْتَدَىٰ بَعْدَ ذَٰلِكَ فَلَهُۥ عَذَابٌ أَلِيمٌ",
+    "ayah2": "فَمَنِ ٱعْتَدَىٰ بَعْدَ ذَٰلِكَ فَلَهُۥ عَذَابٌ أَلِيمٌ",
+    "diffWord": "",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 2,
+      "pageInJuz": 6,
+      "absolutePage": 27
+    },
+    "ref2": {
+      "surah": "المائدة",
+      "juz": 7,
+      "pageInJuz": 2,
+      "absolutePage": 123
+    },
+    "hookBn": "সীমা ছাড়ালে একই",
+    "hookEn": "Same in both places",
+    "verified": false,
+    "needsCheck": true
+  },
+  {
+    "id": "d113",
+    "ayah1": "مَتَٰعًۢا بِٱلْمَعْرُوفِ حَقًّا عَلَى ٱلْمُحْسِنِينَ",
+    "ayah2": "مَتَٰعٌۢ بِٱلْمَعْرُوفِ حَقًّا عَلَى ٱلْمُتَّقِينَ",
+    "diffWord": "مَتَٰعًۢا ... ٱلْمُحْسِنِينَ / مَتَٰعٌۢ ... ٱلْمُتَّقِينَ",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 2,
+      "pageInJuz": 18,
+      "absolutePage": 39
+    },
+    "ref2": {
+      "surah": "البقرة",
+      "juz": 2,
+      "pageInJuz": 18,
+      "absolutePage": 39
+    },
+    "hookBn": "২৩৬ মুহসিন, ২৪১ মুত্তাকী",
+    "hookEn": "236 muhsin, 241 muttaqi",
+    "verified": false,
+    "needsCheck": true
+  },
+  {
+    "id": "d114",
+    "ayah1": "تِلْكَ ءَايَٰتُ ٱللَّهِ نَتْلُوهَا عَلَيْكَ بِٱلْحَقِّ وَإِنَّكَ",
+    "ayah2": "تِلْكَ ءَايَٰتُ ٱللَّهِ نَتْلُوهَا عَلَيْكَ بِٱلْحَقِّ وَمَا ٱللَّهُ",
+    "ayah3": "تِلْكَ ءَايَٰتُ ٱللَّهِ نَتْلُوهَا عَلَيْكَ بِٱلْحَقِّ فَبِأَىِّ",
+    "diffWord": "وَإِنَّكَ / وَمَا ٱللَّهُ / فَبِأَىِّ",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 2,
+      "pageInJuz": 20,
+      "absolutePage": 41
+    },
+    "ref2": {
+      "surah": "آل عمران",
+      "juz": 4,
+      "pageInJuz": 2,
+      "absolutePage": 63
+    },
+    "ref3": {
+      "surah": "الجاثية",
+      "juz": 25,
+      "pageInJuz": 17,
+      "absolutePage": 498
+    },
+    "hookBn": "নবী, আল্লাহ, প্রশ্ন",
+    "hookEn": "Prophet, Allah, question",
+    "verified": false,
+    "needsCheck": true
+  }
+    ]
+
             
   ],
   "same": [
