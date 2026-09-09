@@ -305,174 +305,36 @@
       },
       "verified": false
     },
-    {
-      "id": "d018",
-      "ayah1": "وَاتَّقُوا يَوْمًا لَا تَجْزِي نَفْسٌ عَنْ نَفْسٍ شَيْئًا",
-      "ayah2": "وَاتَّقُوا يَوْمًا لَا تَجْزِي نَفْسٌ عَنْ نَفْسٍ شَيْئًا",
-      "diffWord": "— / —",
-      "ref1": {
-        "surah": "البقرة",
-        "juz": 1,
-        "pageInJuz": 10,
-        "absolutePage": 7
-      },
-      "ref2": {
-        "surah": "البقرة",
-        "juz": 1,
-        "pageInJuz": 15,
-        "absolutePage": 19
-      },
-      "hookBn": "উদাহরণ এন্ট্রি — পরীক্ষার জন্য",
-      "hookEn": "Sample entry for testing",
-      "verified": false
+
+    
+[
+  {
+    "id": "d101",
+    "ayah1": "لِئَلَّا يَكُونَ لِلنَّاسِ عَلَيْكُمْ حُجَّةٌ",
+    "ayah2": "لِئَلَّا يَكُونَ لِلنَّاسِ عَلَى ٱللَّهِ حُجَّةٌ",
+    "diffWord": "عَلَيْكُمْ / عَلَى ٱللَّهِ",
+    "ref1": {
+      "surah": "البقرة",
+      "juz": 2,
+      "pageInJuz": 2,
+      "absolutePage": 23
     },
-    {
-      "id": "d019",
-      "ayah1": "إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
-      "ayah2": "وَاللَّهُ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
-      "diffWord": "إِنَّ اللَّهَ / وَاللَّهُ",
-      "ref1": {
-        "surah": "البقرة",
-        "juz": 1,
-        "pageInJuz": 4,
-        "absolutePage": 3
-      },
-      "ref2": {
-        "surah": "آل عمران",
-        "juz": 3,
-        "pageInJuz": 12,
-        "absolutePage": 53
-      },
-      "hookBn": "শুরুতে ইন্না নাকি ওয়া — এটাই পার্থক্য",
-      "hookEn": "Starts with inna or wa",
-      "verified": false
+    "ref2": {
+      "surah": "النساء",
+      "juz": 6,
+      "pageInJuz": 3,
+      "absolutePage": 104
     },
-    {
-      "id": "d020",
-      "variants": [
-        {
-          "ayah": "فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ",
-          "diffWord": "فَبِأَيِّ",
-          "ref": {
-            "surah": "الرحمن",
-            "juz": 27,
-            "pageInJuz": 10,
-            "absolutePage": 531
-          }
-        },
-        {
-          "ayah": "وَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ",
-          "diffWord": "وَبِأَيِّ",
-          "ref": {
-            "surah": "الرحمن",
-            "juz": 27,
-            "pageInJuz": 11,
-            "absolutePage": 532
-          }
-        },
-        {
-          "ayah": "آلَاءِ رَبِّكُمَا تُكَذِّبَانِ",
-          "diffWord": "",
-          "ref": {
-            "surah": "الرحمن",
-            "juz": 27,
-            "pageInJuz": 12,
-            "absolutePage": 533
-          }
-        }
-      ],
-      "hookBn": "৩ জায়গার উদাহরণ — ফা, ওয়া, আর কিছুই না",
-      "hookEn": "3-place sample: fa, wa, none",
-      "verified": false
-    },
-    {
-      "id": "d021",
-      "variants": [
-        {
-          "ayah": "وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِنْ مُدَّكِرٍ",
-          "diffWord": "وَلَقَدْ",
-          "ref": {
-            "surah": "القمر",
-            "juz": 27,
-            "pageInJuz": 14,
-            "absolutePage": 529
-          }
-        },
-        {
-          "ayah": "فَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِنْ مُدَّكِرٍ",
-          "diffWord": "فَلَقَدْ",
-          "ref": {
-            "surah": "القمر",
-            "juz": 27,
-            "pageInJuz": 15,
-            "absolutePage": 530
-          }
-        },
-        {
-          "ayah": "ثُمَّ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِنْ مُدَّكِرٍ",
-          "diffWord": "ثُمَّ",
-          "ref": {
-            "surah": "القمر",
-            "juz": 27,
-            "pageInJuz": 15,
-            "absolutePage": 530
-          }
-        },
-        {
-          "ayah": "يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِنْ مُدَّكِرٍ",
-          "diffWord": "",
-          "ref": {
-            "surah": "القمر",
-            "juz": 27,
-            "pageInJuz": 16,
-            "absolutePage": 531
-          }
-        }
-      ],
-      "hookBn": "৪ জায়গার উদাহরণ — ওয়া, ফা, ছুম্মা, আর কিছুই না",
-      "hookEn": "4-place sample",
-      "verified": false
-    },
-    {
-      "id": "d022",
-      "verified": false,
-      "ayah1": "وَاعْبُدُوا اللَّهَ وَلَا تُشْرِكُوا بِهِ شَيْئًا",
-      "ayah2": "أَنِ اعْبُدُوا اللَّهَ وَاتَّقُوهُ",
-      "diffWord": "وَاعْبُدُوا اللَّهَ / أَنِ اعْبُدُوا اللَّهَ",
-      "ref1": {
-        "surah": "النساء",
-        "juz": 5,
-        "pageInJuz": 1,
-        "absolutePage": 81
-      },
-      "ref2": {
-        "surah": "نوح",
-        "juz": 29,
-        "pageInJuz": 7,
-        "absolutePage": 570
-      },
-      "hookBn": "নিসায় ওয়া দিয়ে, নূহে আন দিয়ে",
-      "hookEn": "Nisa starts with wa, Nuh with an"
-    },
-    {
-      "id": "d023",
-      "verified": false,
-      "ayah1": "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِلْعَالَمِينَ",
-      "ayah2": "وَمَا أَرْسَلْنَاكَ إِلَّا كَافَّةً لِلنَّاسِ",
-      "diffWord": "رَحْمَةً لِلْعَالَمِينَ / كَافَّةً لِلنَّاسِ",
-      "ref1": {
-        "surah": "الأنبياء",
-        "juz": 17,
-        "pageInJuz": 10,
-        "absolutePage": 331
-      },
-      "ref2": {
-        "surah": "سبأ",
-        "juz": 22,
-        "pageInJuz": 10,
-        "absolutePage": 430
-      }
-    }
+    "hookBn": "বাকারা→তোমরা, নিসা→আল্লাহ",
+    "hookEn": "Baqarah=you, Nisa=Allah",
+    "verified": false
+  },
+  {
+    "id": "d102",
+    "ayah1": "وَمَن كَفَرَ فَإِنَّ رَبِّى غَنِىٌّ كَرِيمٌ",
+    "ayah2": "وَمَن كَفَرَ فَإِنَّ ٱللَّهَ غَنِىٌّ حَمِيدٌ",
+    "diffWord": "رَبِّى غَنِىٌّ كَرِيمٌ / ٱللَّهَ غَنِىٌّ حَمِيدٌ",
+            
   ],
   "same": [
     {
